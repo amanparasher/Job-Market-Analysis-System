@@ -25,8 +25,15 @@ def get_skill_frequencies(skill_lists: list) -> Counter:
 
 def classify_skill(skill: str, freq_dict: dict, max_freq: int, threshold: int = 3):
     freq = freq_dict.get(skill, 0)
-    trend_score = round(freq / max_freq, 2)
-    category = "emerging" if freq < threshold else "established"
+    
+    if max_freq == 0:
+        trend_score = 0.0
+    else:
+        trend_score = round(freq / max_freq, 2)
+    
+    # Use percentage threshold instead of raw frequency
+    category = "emerging" if trend_score < 0.05 else "established"
+    
     return category, trend_score
 
 def skill_trend_detector(description: str, freq_dict: dict) -> dict:
