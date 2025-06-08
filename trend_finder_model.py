@@ -1,9 +1,7 @@
-# trend_model.py
-
 import re
 from collections import Counter
 
-# Sample skill list — you can extend this
+# Sample skill list
 skill_keywords = [
     'python', 'r', 'sql', 'java', 'c++', 'pytorch', 'tensorflow', 'excel',
     'machine learning', 'deep learning', 'nlp', 'hadoop', 'spark', 'tableau',
@@ -31,7 +29,6 @@ def classify_skill(skill: str, freq_dict: dict, max_freq: int, threshold: int = 
     else:
         trend_score = round(freq / max_freq, 2)
     
-    # Use percentage threshold instead of raw frequency
     category = "emerging" if trend_score < 0.05 else "established"
     
     return category, trend_score

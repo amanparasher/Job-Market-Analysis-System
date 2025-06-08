@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
@@ -8,7 +7,7 @@ from trend_finder_model import skill_trend_detector, extract_skills_from_descrip
 
 app = FastAPI(title="Skill Trend Detector API", version="1.0.0")
 
-# Load dataset and build frequency dict once
+# Loading dataset and building frequency dict
 try:
     df = pd.read_csv("dataset.csv")
     df['job_description_text'] = df['job_description_text'].fillna("")
