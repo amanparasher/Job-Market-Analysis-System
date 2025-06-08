@@ -14,9 +14,11 @@ This project is a complete **Job Market Analysis System** that analyzes job desc
 ### 📊 Part 2: Data Visualization
 - Visualized:
   - Skill distribution by seniority.
-  - Top 10 most in-demand skills.
-  - Geographic job distribution (if location data available).
-  - Salary patterns by seniority level.
+  - Top Skills: Entry vs Senior Level.
+  - Top 10 Most In-Demand Skills.
+  - Top 10 Skills by Seniority Level.
+  - Top 10 Job Locations by Region
+  - Job Postings Over Time
 
 ### 🧠 Part 3: Skill Trend Detector
 - Extracted skills from job descriptions.
@@ -32,13 +34,23 @@ This project is a complete **Job Market Analysis System** that analyzes job desc
 
 ## ⚙️ Tech Stack
 
-- Python 3.10+
+- Python 3.7 or higher
 - pandas, matplotlib, seaborn
 - FastAPI
 - Uvicorn
+- pydantic
 - wordcloud, nltk, re, collections
 
 ---
 
 ## 📂 Project Structure
+
+skill-trend-detector/
+├── main.py                 # FastAPI application
+├── Data_analysis.ipynb                 # Analysis of Dataset
+├── trend_finder_model.py   # Core ML model
+├── dataset.csv            # Your job descriptions dataset
+├── requirements.txt       # Dependencies
+└── README.md             # This documentation
+
 
